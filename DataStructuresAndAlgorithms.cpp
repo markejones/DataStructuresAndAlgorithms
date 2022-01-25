@@ -19,6 +19,19 @@ int main()
   catch (std::exception e) {
     std::cout << e.what() << std::endl;
   }
+
+  Stack<int> intStack;
+
+
+  try {
+    int five = 5;
+    intStack.push(five);
+    const auto popped = intStack.pop();
+    std::cout << "popped " << popped << " off the stack\n";
+  }
+  catch (std::exception e) {
+    std::cout << e.what() << std::endl;
+  }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
