@@ -8,12 +8,17 @@
 
 int main()
 {
-  std::unique_ptr<Stack<Point2D*>> pointStack = std::make_unique<Stack<Point2D*>>();
-  auto pt1 = std::make_shared<Point2D>(5, 10);
-  pointStack->push(pt1.get());
+  Stack<Point2D*> pointStack;
 
-  const auto pt = pointStack->pop();
-  std::cout << "popped " << pt->getId() << " off the stack\n";
+  try {
+    auto pt1 = std::make_shared<Point2D>(5, 10);
+    pointStack.push(pt1.get());
+    const auto pt = pointStack.pop();
+    std::cout << "popped " << pt->getId() << " off the stack\n";
+  }
+  catch (std::exception e) {
+    std::cout << e.what() << std::endl;
+  }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
