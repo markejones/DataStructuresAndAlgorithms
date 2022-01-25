@@ -5,6 +5,7 @@
 #include <memory>
 #include "Point2D.h"
 #include "Stack.h"
+#include "LinkedList.h"
 
 int main()
 {
@@ -32,6 +33,8 @@ int main()
   catch (std::exception e) {
     std::cout << e.what() << std::endl;
   }
+
+  LinkedList();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

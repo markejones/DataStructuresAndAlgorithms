@@ -142,6 +142,7 @@
     <ClCompile Include="DataStructuresAndAlgorithms.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Point2D.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="UUID.h" />
