@@ -4,28 +4,24 @@
 #include <string>
 #include "Point2D.h"
 
+
 class Node {
+private:
+  int _data;
 public:
-  int data;
-  const Node *next;
+  Node(int data) { _data = data; }
+  ~Node() { next.release(); }
+  std::unique_ptr<Node> next;
 };
 
 
 void LinkedList() {
   std::cout << "Singly linked list implementation\n --------------- \n";
 
-  Node* node1 = new Node();
-  Node* node2 = new Node();
-  Node* node3 = new Node();
-
-
-
-  node1->data = 1;
-  node1->next = node2;
-  node2->data = 2;
-  node2->next = node3;
-  node3->data = 3;
-  node3->next = nullptr;
-
-  delete node1;
+  auto node1 = std::make_unique<Node>(1);
+  node1->next = nullptr;
+  auto node2 = std::make_unique<Node>(2);
+  node2->next = std::move(node1);
+  auto node3 = std::make_unique<Node>(3);
+  node3->next = std::move(node2);
 }
