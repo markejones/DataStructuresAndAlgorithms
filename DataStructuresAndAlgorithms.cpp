@@ -2,10 +2,18 @@
 //
 
 #include <iostream>
+#include <memory>
+#include "Point2D.h"
+#include "Stack.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  std::unique_ptr<Stack<Point2D*>> pointStack = std::make_unique<Stack<Point2D*>>();
+  auto pt1 = std::make_shared<Point2D>(5, 10);
+  pointStack->push(pt1.get());
+
+  const auto pt = pointStack->pop();
+  std::cout << "popped " << pt->getId() << " off the stack\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

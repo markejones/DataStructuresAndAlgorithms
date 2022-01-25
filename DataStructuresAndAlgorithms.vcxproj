@@ -141,6 +141,11 @@
   <ItemGroup>
     <ClCompile Include="DataStructuresAndAlgorithms.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Point2D.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="UUID.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
